@@ -53,7 +53,7 @@ namespace Lab0
             throw new NotImplementedException();
         }
         // TODO
-        private void AddRecursive(int key, T value, BinarySearchTree<T> node)
+        private void AddRecursive(int key, T value, BinarySearchTreeNode<T> node)
         {
 
         }
