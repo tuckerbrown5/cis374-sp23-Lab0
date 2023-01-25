@@ -35,6 +35,18 @@ namespace Lab0
         // TODO
         public double MedianKey => throw new NotImplementedException();
 
+
+        public BinarySearchTreeNode<T> GetNode(int key)
+        {
+            return GetNodeRecursive(Root, key);
+        }
+
+        private BinarySearchTreeNode<T> GetNodeRecursive(BinarySearchTreeNode<T> node, int key)
+        {
+            return null;
+        }
+
+
         // TODO
         public void Add(int key, T value)
         {
@@ -91,6 +103,58 @@ namespace Lab0
         public void Update(int key, T value)
         {
             throw new NotImplementedException();
+        }
+
+
+        // TODO
+        public List<int> InOrderKeys
+        {
+            get
+            {
+                List<int> keys = new List<int>();
+                InOrderKeysRecursive(Root, keys);
+
+                return keys;
+
+            }
+        }
+
+        private void InOrderKeysRecursive(BinarySearchTreeNode<T> node, List<int> keys)
+        {
+            
+        }
+
+        // TODO
+        public List<int> PreOrderKeys
+        {
+            get
+            {
+                List<int> keys = new List<int>();
+                PreOrderKeysRecursive(Root, keys);
+
+                return keys;
+            }
+        }
+
+        private void PreOrderKeysRecursive(BinarySearchTreeNode<T> node, List<int> keys)
+        {
+            
+        }
+
+        // TODO
+        public List<int> PostOrderKeys
+        {
+            get
+            {
+                List<int> keys = new List<int>();
+                PostOrderKeysRecursive(Root, keys);
+                return keys;
+            }
+        }
+
+        private void PostOrderKeysRecursive(BinarySearchTreeNode<T> node, List<int> keys)
+        {
+            
         }
     }
 }
