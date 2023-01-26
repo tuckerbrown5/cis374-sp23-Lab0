@@ -245,8 +245,8 @@ namespace Lab0
             }
 
             keys.Add(node.Key);
-            InOrderKeysRecursive(node.Left, keys);
-            InOrderKeysRecursive(node.Right, keys);
+            PreOrderKeysRecursive(node.Left, keys);
+            PreOrderKeysRecursive(node.Right, keys);
         }
 
         // TODO
