@@ -196,17 +196,36 @@ namespace Lab0
             // find the min node in the right child's subtree
             if (node.Right != null)
             {
-
+                return MinNode(node.Right);
             }
 
-            return null;
+            var x = node.Parent;
+            while (x != null && node == x.Right)
+            {
+                node = x;
+                x = x.Parent;
+            }
+
+            return x;
 
         }
 
         // TODO
         public BinarySearchTreeNode<T> Prev(BinarySearchTreeNode<T> node)
         {
-            throw new NotImplementedException();
+            if (node.Left != null)
+            {
+                return MinNode(node.Left);
+            }
+
+            var x = node.Parent;
+            while (x != null && node == x.Left)
+            {
+                node = x;
+                x = x.Parent;
+            }
+
+            return x;
         }
 
         // TODO
@@ -325,6 +344,10 @@ namespace Lab0
 
                     node.Parent = null;
                     node.Right = null;
+                }
+                else
+                {
+                    
                 }
 
                 return;
@@ -445,7 +468,14 @@ namespace Lab0
 
         private void PostOrderKeysRecursive(BinarySearchTreeNode<T> node, List<int> keys)
         {
-            
+            if (node == null)
+            {
+                return;
+            }
+
+            PostOrderKeysRecursive(node.Left, keys);
+            PostOrderKeysRecursive(node.Right, keys);
+            keys.Add(node.Key);
         }
 
         public BinarySearchTreeNode<T> MinNode(BinarySearchTreeNode<T> node)
